@@ -25,11 +25,11 @@ window.addEventListener('popstate', (e) => {
     render(window.location.pathname);
 });
 
-window.addEventListener('hashchange', (e) => {
-   e.preventDefault();
+// window.addEventListener('hashchange', (e) => {
+//    e.preventDefault();
    
-   render(window.location.pathname);
-});
+//    render(window.location.pathname);
+// });
 
 function render(path) {
     root.innerHTML = routes[path];
