@@ -1,5 +1,12 @@
 <h1>Home</h1>
 
 <ul>
-    <li *ngFor="let user of users">{{ user.name }} >> {{ user.age }}</li>
+    <li 
+    [style.color]="user.age % 2 == 0 ? 'red' : 'blue'" 
+    *ngFor="let user of users">{{ user.name }} >> {{ user.age }}
+</li>
 </ul>
+
+<h2>{{testTitle}}</h2>
+
+<button>Event btn</button>
