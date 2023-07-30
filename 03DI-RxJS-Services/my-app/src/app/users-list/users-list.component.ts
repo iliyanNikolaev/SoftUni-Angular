@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectorRef, Component, Input } from '@angular/core';
 import { User } from '../types/User';
 
 @Component({
@@ -8,4 +8,10 @@ import { User } from '../types/User';
 })
 export class UsersListComponent {
   @Input() users: User[] = [];
+
+  constructor(private cd: ChangeDetectorRef) {}
+
+  refresh(){
+    this.cd.detectChanges();
+  }
 }

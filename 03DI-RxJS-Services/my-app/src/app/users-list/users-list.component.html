@@ -1,5 +1,5 @@
 <h1>Users list component</h1>
-
+<button (click)="refresh()">Refresh list</button>
 <div>
     <ul>
         <li *ngFor="let user of users"><app-user-list-item [user]="user" /></li>
