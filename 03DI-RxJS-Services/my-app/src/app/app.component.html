@@ -1,9 +1,0 @@
-<h1>{{title}} started!</h1>
-<div>
-    <h2>Add user to the list</h2>
-    <input #inputName type="text" placeholder="name">
-    <input #inputAge type="number" placeholder="age">
-    <button (click)="addUser(inputName, inputAge)">Add</button>
-</div>
-
-<app-users-list [users]="users" />
