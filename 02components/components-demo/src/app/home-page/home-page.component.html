@@ -1,0 +1,9 @@
+<h1>Home page</h1>
+<p>Welcome to our site</p>
+<button (click)="onToggle()">toggle</button>
+<p *ngIf="toggle">Toggle is true</p>
+<p *ngIf="!toggle">Toggle is false</p>
+
+<ul *ngIf="toggle">
+    <li *ngFor="let user of users">{{user.name}} => {{user.age}}</li>
+</ul>
