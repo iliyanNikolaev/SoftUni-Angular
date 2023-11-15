@@ -1,6 +1,7 @@
 <h1>Home page</h1>
 <p>Welcome to our site</p>
-<button (click)="onToggle()">toggle</button>
+<button (click)="onToggle($event)">toggle</button>
+<input type="text" [value]="counter">
 <p *ngIf="toggle">Toggle is true</p>
 <p *ngIf="!toggle">Toggle is false</p>
 
