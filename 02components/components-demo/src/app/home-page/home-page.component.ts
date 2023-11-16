@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { User } from 'src/types/User';
 
 @Component({
@@ -8,6 +8,7 @@ import { User } from 'src/types/User';
 })
 
 export class HomePageComponent {
+  @Input('title') title: string = '';
   users: User[]
   toggle = false;
   counter = 1;
@@ -15,6 +16,7 @@ export class HomePageComponent {
   constructor(){
     this.users = [{ name: 'ilich', age: 26 }, { name: 'sonya', age: 22 }, { name: "megi", age: 23 }];
   }
+  
   onToggle = (event: Event) => {
     this.toggle = !this.toggle;
     this.counter++;
