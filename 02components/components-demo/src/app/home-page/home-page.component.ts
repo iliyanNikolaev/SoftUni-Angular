@@ -17,6 +17,7 @@ export class HomePageComponent {
   
   onToggle = (event: Event) => {
     this.toggle = !this.toggle;
+    this.counter++;
     this.onReacted.emit(true);
   }
 }
