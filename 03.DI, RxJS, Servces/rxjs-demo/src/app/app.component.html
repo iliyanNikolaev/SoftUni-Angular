@@ -1,0 +1,6 @@
+<h1>DI, RxJS, Services</h1>
+<div>
+    <input #todoContentEl type="text" placeholder="content here...">
+    <button (click)="addTodo(todoContentEl)">Add</button>
+</div>
+<app-todo-list [todos]="todos" />

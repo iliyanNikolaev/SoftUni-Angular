@@ -1,0 +1,8 @@
+<div>
+    <button (click)="refresh()">refresh</button>
+    <ul>
+        <li *ngFor="let todo of todos">
+            <app-todo-item [todo]="todo" />
+        </li>
+    </ul>
+</div>
