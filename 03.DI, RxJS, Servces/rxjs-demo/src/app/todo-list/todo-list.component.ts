@@ -5,17 +5,17 @@ import { Todo } from '../type/Todo';
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoListComponent {
   @Input('todos') todos: Todo[] = [];
-  constructor(private cd: ChangeDetectorRef){}
+  // constructor(private cd: ChangeDetectorRef){}
 
   ngOnChanges(){
     console.log('change')
   }
 
-  refresh(){
-    this.cd.detectChanges();
-  }
+  // refresh(){
+  //   this.cd.detectChanges();
+  // }
 }
