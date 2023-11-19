@@ -1,28 +1,30 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, SimpleChange } from '@angular/core';
 import { Todo } from '../type/Todo';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-todo-list',
   templateUrl: './todo-list.component.html',
   styleUrls: ['./todo-list.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class TodoListComponent {
-  @Input('todos') todos: Todo[] = [];
-  
-  constructor(private cd: ChangeDetectorRef){
-    this.cd.detach();
+  todos: any[] = []
+  constructor(private userService: UserService){
   }
 
   ngOnInit(){
-    this.cd.detectChanges();
+    // this.userService.getTodos().then(data => this.todos = data).catch(err => alert(err.message));
+    this.userService.getTodos().subscribe(data => {
+      this.todos = data;
+    })
   }
 
-  ngOnChanges(changes: SimpleChange){
-    if(this.todos.length > 6){
-      this.cd.detectChanges();
-    }
-  }
+  // ngOnChanges(changes: SimpleChange){
+  //   if(this.todos.length > 6){
+  //     this.cd.detectChanges();
+  //   }
+  // }
 
   // refresh(){
   //   this.cd.detectChanges();

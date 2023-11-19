@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { UserService } from './user.service';
 
 @Component({
@@ -7,5 +7,7 @@ import { UserService } from './user.service';
   // styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  todos: any[] = [];
+
   constructor(public userService: UserService) { }
 }
