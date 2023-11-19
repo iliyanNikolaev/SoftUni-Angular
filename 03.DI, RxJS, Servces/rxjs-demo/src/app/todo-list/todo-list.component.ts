@@ -10,6 +10,8 @@ import { UserService } from '../user.service';
 })
 export class TodoListComponent {
   todos: any[] = []
+  isLoading: boolean = true;
+
   constructor(private userService: UserService){
   }
 
@@ -17,6 +19,7 @@ export class TodoListComponent {
     // this.userService.getTodos().then(data => this.todos = data).catch(err => alert(err.message));
     this.userService.getTodos().subscribe(data => {
       this.todos = data;
+      this.isLoading = false;
     })
   }
 

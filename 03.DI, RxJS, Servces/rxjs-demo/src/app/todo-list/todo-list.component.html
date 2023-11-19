@@ -1,5 +1,6 @@
 <div>
     <!-- <button (click)="refresh()">refresh</button> -->
+    <p *ngIf="isLoading">Loading...</p>
     <ul>
         <li *ngFor="let todo of todos">
             <app-todo-item [todo]="todo" />
