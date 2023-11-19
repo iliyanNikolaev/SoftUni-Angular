@@ -1,9 +1,10 @@
-import { Injectable } from '@angular/core';
+// import { Injectable } from '@angular/core';
 import { Todo } from './type/Todo';
 
-@Injectable({
-  providedIn: 'root'
-})
+// @Injectable({
+//   providedIn: 'root'
+// })
+
 export class UserService {
   #counter = 5;
 
