@@ -12,6 +12,9 @@ export class ThemesListComponent {
   ngOnInit() {
     this.apiService
       .getThemes()
-      .subscribe((data) => console.log(data));
+      .subscribe({
+        next: (data => console.log(data)),
+        error: (err => alert(err.message))
+      });
   }
 }
