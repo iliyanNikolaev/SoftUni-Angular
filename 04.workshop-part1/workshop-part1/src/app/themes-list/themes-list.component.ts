@@ -8,7 +8,7 @@ import { ITheme } from '../interfaces/theme';
   // styleUrls: ['./themes-list.component.css']
 })
 export class ThemesListComponent {
-  themes: ITheme[] = [];
+  themes: ITheme[] | null = null;
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {

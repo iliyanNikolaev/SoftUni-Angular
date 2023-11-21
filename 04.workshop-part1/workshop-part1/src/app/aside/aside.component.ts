@@ -8,7 +8,7 @@ import { IPost } from '../interfaces/post';
   // styleUrls: ['./aside.component.css']
 })
 export class AsideComponent {
-  posts: IPost[] = [];
+  posts: IPost[] | null = null;
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {

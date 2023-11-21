@@ -6,6 +6,7 @@ import { ThemesListComponent } from './themes-list/themes-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MainComponent } from './main/main.component';
 import { AsideComponent } from './aside/aside.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AsideComponent } from './aside/aside.component';
   imports: [
     BrowserModule,
     CoreModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
