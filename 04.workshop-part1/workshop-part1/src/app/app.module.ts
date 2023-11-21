@@ -12,7 +12,7 @@ import { AsideComponent } from './aside/aside.component';
     AppComponent,
     ThemesListComponent,
     MainComponent,
-    AsideComponent
+    AsideComponent,
   ],
   imports: [
     BrowserModule,
