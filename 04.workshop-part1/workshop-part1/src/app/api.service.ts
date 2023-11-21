@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { ITheme } from './interfaces/theme';
+import { IPost } from './interfaces/post';
 const apiHost = 'http://localhost:3000/api';
 
 @Injectable({
@@ -14,6 +15,6 @@ export class ApiService {
   }
 
   getLatestPosts() {
-    return this.httpClient.get(apiHost + '/posts?limit=5');
+    return this.httpClient.get<IPost[]>(apiHost + '/posts?limit=5');
   }
 }
