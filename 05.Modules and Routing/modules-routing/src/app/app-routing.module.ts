@@ -4,6 +4,7 @@ import { HomeComponent } from './home/home.component';
 import { UsersListComponent } from './users/users-list/users-list.component';
 import { AboutComponent } from './about/about.component';
 import { DetailsComponent } from './users/details/details.component';
+import { AuthGuard } from './users/user-details.guard';
 
 const routes: Routes = [
   {
@@ -25,6 +26,7 @@ const routes: Routes = [
   },
   {
     path: 'users-list/details/:id',
+    // canActivate: [AuthGuard],
     component: DetailsComponent
   }
 ];
