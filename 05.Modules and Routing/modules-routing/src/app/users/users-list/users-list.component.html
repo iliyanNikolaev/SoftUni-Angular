@@ -1,6 +1,7 @@
 <h1>Catalog</h1>
 <ul>
     <li *ngFor="let user of users">
-        {{user.name}}: {{user.phone}}
+        {{user.name}}: {{user.id}}
+        <a routerLink="/users-list/details/{{user.id}}">details</a>
     </li>
 </ul>

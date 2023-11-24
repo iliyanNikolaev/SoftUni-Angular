@@ -1,0 +1,6 @@
+<h1>Details</h1>
+<p *ngIf="isLoading">Loading...</p>
+<div *ngIf="!isLoading">
+    <h3>Username: {{currentUser?.username}}</h3>
+    <p>Email: {{currentUser?.email}}</p>
+</div>
