@@ -8,6 +8,7 @@ import { IPost } from '../interfaces/post';
   // styleUrls: ['./aside.component.css']
 })
 export class AsideComponent {
+  isError: boolean = false;
   posts: IPost[] | null = null;
   constructor(private apiService: ApiService) { }
 
@@ -15,10 +16,8 @@ export class AsideComponent {
     this.apiService
       .getLatestPosts()
       .subscribe({
-        next: (data) => {
-          this.posts = data;
-        },
-        error: (err) => { alert(err.message) }
+        next: data => this.posts = data,
+        error: err => this.isError = true
       })
   }
 }

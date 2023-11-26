@@ -1,7 +1,17 @@
 <h1>Catalog</h1>
+<p *ngIf="isLoading">Loading...</p>
 <ul>
     <li *ngFor="let user of users">
+<<<<<<< Updated upstream
         {{user.name}}: {{user.id}}
         <a routerLink="/users-list/details/{{user.id}}">details</a>
+=======
+<<<<<<< HEAD
+        {{user.name}} -> id: {{user.id}} <a routerLink="/user-details/1">Details</a> 
+=======
+        {{user.name}}: {{user.id}}
+        <a routerLink="/users-list/details/{{user.id}}">details</a>
+>>>>>>> 87bc027067de9a10d3970243817ada7e87c21efb
+>>>>>>> Stashed changes
     </li>
 </ul>

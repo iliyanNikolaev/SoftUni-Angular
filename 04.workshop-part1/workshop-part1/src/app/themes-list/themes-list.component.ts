@@ -8,6 +8,7 @@ import { ITheme } from '../interfaces/theme';
   // styleUrls: ['./themes-list.component.css']
 })
 export class ThemesListComponent {
+  isError: boolean = false;
   themes: ITheme[] | null = null;
   constructor(private apiService: ApiService) { }
 
@@ -15,10 +16,8 @@ export class ThemesListComponent {
     this.apiService
       .getThemes()
       .subscribe({
-        next: (data => {
-          this.themes = data;
-        }),
-        error: (err => alert(err.message))
+        next: data => this.themes = data,
+        error: err => this.isError = true
       });
   }
 }

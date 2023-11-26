@@ -11,7 +11,8 @@ import { RouterModule } from '@angular/router';
     RouterModule
   ],
   exports: [
-    UsersListComponent
+    UsersListComponent, 
+    DetailsComponent
   ]
 })
 export class UsersModule { }

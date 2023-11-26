@@ -8,6 +8,7 @@ import { IUser } from 'src/app/interfaces/User';
   // styleUrls: ['./users-list.component.css']
 })
 export class UsersListComponent {
+  isLoading: boolean = true;
   users: IUser[] | null = null;
   constructor(private usersService: UsersService) {}
 
@@ -15,7 +16,10 @@ export class UsersListComponent {
     this.usersService
       .getUsers()
       .subscribe({
-        next: (data) => { this.users = data },
+        next: (data) => { 
+          this.users = data
+          this.isLoading = false; 
+        },
         error: (err) => alert(err.message)
       })
   }
