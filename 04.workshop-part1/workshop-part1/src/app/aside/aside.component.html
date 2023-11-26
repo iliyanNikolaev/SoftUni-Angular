@@ -5,7 +5,7 @@
         </h2>
         
         <app-loader *ngIf="!posts && !isError"></app-loader>
-        <p *ngIf="isError">Error on loading posts, please try again later...</p>
+        <p *ngIf="isError">Error on loading posts, check Rest Api...</p>
         <div *ngIf="posts">
             <div class="aside-theme" *ngFor="let post of posts">
                 <a href="#">

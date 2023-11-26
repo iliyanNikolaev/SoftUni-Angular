@@ -8,6 +8,7 @@ import { MainComponent } from './main/main.component';
 import { AsideComponent } from './aside/aside.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { AuthModule } from './auth/auth.module';
 
 @NgModule({
   declarations: [
@@ -21,9 +22,13 @@ import { AppRoutingModule } from './app-routing.module';
     CoreModule,
     HttpClientModule,
     SharedModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AuthModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    AppRoutingModule
+  ]
 })
 export class AppModule { }

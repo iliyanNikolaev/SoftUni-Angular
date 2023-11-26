@@ -5,11 +5,17 @@
         </div>
         <div class="mini-navbar">
             <ul>
-                <li>
-                    <a href="#">Login</a>
+                <li *ngIf="isLogged" >
+                    <a routerLink="#">John's profile</a>
                 </li>
-                <li>
-                    <a href="#">Register</a>
+                <li *ngIf="isLogged" >
+                    <a routerLink="/auth/logout">Logout</a>
+                </li>
+                <li *ngIf="!isLogged">
+                    <a routerLink="/auth/login">Login</a>
+                </li>
+                <li *ngIf="!isLogged">
+                    <a routerLink="/auth/register">Register</a>
                 </li>
             </ul>
         </div>
@@ -17,7 +23,7 @@
     <nav>
         <ul>
             <li>
-                <a href="#">Home</a>
+                <a routerLink="/">Home</a>
             </li>
             <li>
                 <a href="#">Themes</a>
