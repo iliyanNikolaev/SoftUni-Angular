@@ -10,6 +10,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { ThemesPageComponent } from './themes-page/themes-page.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { ThemesPageComponent } from './themes-page/themes-page.component';
     MainComponent,
     AsideComponent,
     ThemesPageComponent,
+    NotFoundComponent,
   ],
   imports: [
     BrowserModule,

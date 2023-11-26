@@ -17,6 +17,5 @@ export class HeaderComponent {
     return this.authService.isLogged;
   }
 
-  constructor(private authService: AuthService, private router: Router) { 
-  }
+  constructor(private authService: AuthService, private router: Router) { }
 }
