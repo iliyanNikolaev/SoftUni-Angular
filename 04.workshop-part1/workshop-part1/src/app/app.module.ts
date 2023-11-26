@@ -11,6 +11,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
 import { ThemesPageComponent } from './themes-page/themes-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CreateThemeComponent } from './create-theme/create-theme.component';
+import { ThemeDetailsComponent } from './theme-details/theme-details.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AsideComponent,
     ThemesPageComponent,
     NotFoundComponent,
+    CreateThemeComponent,
+    ThemeDetailsComponent,
   ],
   imports: [
     AuthModule,

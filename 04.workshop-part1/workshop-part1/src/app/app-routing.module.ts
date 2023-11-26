@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { MainComponent } from './main/main.component';
 import { ThemesPageComponent } from './themes-page/themes-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CreateThemeComponent } from './create-theme/create-theme.component';
+import { ThemeDetailsComponent } from './theme-details/theme-details.component';
 
 const routes: Routes = [
   {
@@ -14,6 +16,14 @@ const routes: Routes = [
   {
     path: 'themes',
     component: ThemesPageComponent
+  },
+  {
+    path: 'create-theme',
+    component: CreateThemeComponent
+  },
+  {
+    path: 'details/:id',
+    component: ThemeDetailsComponent
   },
   {
     path: 'not-found',
