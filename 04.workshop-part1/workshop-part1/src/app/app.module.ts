@@ -22,12 +22,12 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NotFoundComponent,
   ],
   imports: [
+    AuthModule,
+    AppRoutingModule,
     BrowserModule,
     CoreModule,
     HttpClientModule,
     SharedModule,
-    AppRoutingModule,
-    AuthModule
   ],
   providers: [],
   bootstrap: [AppComponent],

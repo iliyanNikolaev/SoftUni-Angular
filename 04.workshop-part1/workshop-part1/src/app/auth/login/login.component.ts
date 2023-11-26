@@ -5,10 +5,14 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  // styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   constructor(private router: Router, private authService: AuthService) {
+
+  }
+
+  login(): void {
     this.authService.user = {
       created_at: 'today',
       email: 'ilich@abv.bg',
