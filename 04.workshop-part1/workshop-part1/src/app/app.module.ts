@@ -9,6 +9,7 @@ import { AsideComponent } from './aside/aside.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
+import { ThemesPageComponent } from './themes-page/themes-page.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { AuthModule } from './auth/auth.module';
     ThemesListComponent,
     MainComponent,
     AsideComponent,
+    ThemesPageComponent,
   ],
   imports: [
     BrowserModule,

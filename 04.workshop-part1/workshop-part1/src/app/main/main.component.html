@@ -1,8 +1,23 @@
 <div class="container">
-    <main>
-        <div class="theme-title">
-            <app-themes-list></app-themes-list>
+    <div class="welcome">
+        <h3>Welcome!</h3>
+        <p>SoftUni forum is a place, where you can post your questions, comment, and discuss problems, which
+            you have in your programming language or in your study in SoftUni.</p>
+        <div class="logged" *ngIf="!isLogged">
+            <ul>
+                <li>
+                    <a routerLink="/auth/login">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Login
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="#">
+                        <i class="fas fa-user-plus"></i>
+                        Register
+                    </a>
+                </li>
+            </ul>
         </div>
-    </main>
-    <app-aside></app-aside>
+    </div>        
 </div>
