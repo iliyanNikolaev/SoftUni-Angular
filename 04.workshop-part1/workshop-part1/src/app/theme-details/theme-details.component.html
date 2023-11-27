@@ -1,15 +1,20 @@
-<div class="container">
+<app-loader *ngIf="!currentTheme && !isError"></app-loader>
+<div *ngIf="isError">
+    <p>Error on loading theme</p>
+    <a routerLink="/themes">Back to themes</a>
+</div>
+<div class="container" *ngIf="currentTheme">
     <!-- theme content  -->
     <div class="theme-content">
         <!-- theme-title  -->
         <div class="theme-title">
             <div class="theme-name-wrapper">
                 <div class="theme-name">
-                    <h2>Angular 10</h2>
-                    <p>Date: <time>2020-10-10 12:08:28</time></p>
+                    <h2>{{currentTheme.themeName}}</h2>
+                    <p>Date: <time>{{currentTheme.created_at}}</time></p>
                 </div>
                 <div class="subscribers">
-                    <p>Subscribers: <span>456</span></p>
+                    <p>Subscribers: <span>{{currentTheme.subscribers.length}}</span></p>
                     <!-- <button class="subscribe">Subscribe</button>
                     <button class="unsubscribe">Unsubscribe</button> -->
                 </div>
@@ -22,7 +27,7 @@
             </header>
             <div class="comment-main">
                 <div class="userdetails">
-                    <img src="./profile.png" alt="avatar">
+                    <img src="../../assets/profile.png" alt="avatar">
                 </div>
                 <div class="post-content">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure facere sint dolorem quam,
@@ -45,7 +50,7 @@
             </header>
             <div class="comment-main">
                 <div class="userdetails">
-                    <img src="./profile.png" alt="avatar">
+                    <img src="../../assets/profile.png" alt="avatar">
                 </div>
                 <div class="post-content">
                     <p>Lorem ipsum dolor sit amet consectetur </p>

@@ -14,6 +14,10 @@ export class ApiService {
     return this.httpClient.get<ITheme[]>(apiHost + '/themes');
   }
 
+  getThemeById(id: string) {
+    return this.httpClient.get<ITheme>(apiHost + '/themes/' + id);
+  }
+
   getLatestPosts() {
     return this.httpClient.get<IPost[]>(apiHost + '/posts?limit=5');
   }
