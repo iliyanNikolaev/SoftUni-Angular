@@ -3,15 +3,16 @@ import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { LogoutComponent } from "./logout/logout.component";
 import { ProfileComponent } from "./profile/profile.component";
+import { AuthGuard } from "../shared/guards/AuthGuard";
 
 const routes = [
     {
         path: 'auth/login',
-        component: LoginComponent
+        component: LoginComponent,
     },
     {
         path: 'auth/register',
-        component: RegisterComponent
+        component: RegisterComponent,
     },
     {
         path: 'auth/logout',
@@ -19,7 +20,11 @@ const routes = [
     },
     {
         path: 'auth/profile',
-        component: ProfileComponent
+        canActivate: [AuthGuard],
+        component: ProfileComponent,
+        data: {
+            loginRequired: true
+        }
     }
 ];
 
