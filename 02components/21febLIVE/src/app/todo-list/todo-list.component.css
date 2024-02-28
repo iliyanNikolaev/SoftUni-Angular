@@ -1,0 +1,8 @@
+.HIGH {
+    background-color: darkgrey;
+    font-weight: bold;
+}
+.LOW {
+    background-color: lightblue;
+    font-weight: bold;
+}
