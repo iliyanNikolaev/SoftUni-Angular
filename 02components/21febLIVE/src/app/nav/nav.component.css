@@ -1,5 +1,16 @@
+nav {
+    padding: 2px 4px;
+    border-bottom: 1px solid green;
+}
 a {
+    text-decoration: none;
+    padding: 2px 4px;
     margin-right: 6px;
     font-size: larger;
+    background-color: grey;
     color: green;
+    font-weight: bold;
+}
+a:hover {
+    background-color: darkgrey;
 }
