@@ -13,4 +13,8 @@ export class TodoListComponent {
     'todo4',
     'todo5',
   ];
+
+  receiveDataFromChild(modelVal: string) {
+    console.log(modelVal)
+  }
 }

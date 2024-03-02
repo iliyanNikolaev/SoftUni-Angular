@@ -3,4 +3,6 @@
     <a href="/">home</a>
     <a href="/sensors">sensors</a>
     <a href="/about">about</a>
+    <button (click)="handleToggle()">toggle second logo</button>
+    <app-logo *ngIf="isVisible"/>
 </nav>

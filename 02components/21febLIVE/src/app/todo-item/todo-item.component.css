@@ -1,0 +1,10 @@
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+.arduinoImg{
+    width: 200px;
+    border-radius: 12px;
+}

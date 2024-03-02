@@ -1,1 +1,4 @@
-<p>todo-item works!</p>
+<article (click)="sendDataToParent()">
+    <img [attr.src]="imgUrl" [class]="imgClass" alt="arduino">
+    <span>{{modelVal}}</span>
+</article>

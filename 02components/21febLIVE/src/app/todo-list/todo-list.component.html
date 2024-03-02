@@ -1,5 +1,11 @@
 <ul>
-    <app-todo-item *ngFor="let todo of todos; index as i" />
+    <div class="imagesContainer">
+        <app-todo-item 
+            *ngFor="let todo of todos; index as i" 
+            model="uno r3 v{{i}}"
+            (onModelOutput)="receiveDataFromChild($event)"
+        />
+    </div>
     
     <li *ngFor="let todo of todos; index as i">
         <span *ngIf="i % 2 === 0" class="HIGH">{{todo}}</span>

@@ -1,3 +1,8 @@
+.imagesContainer{
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
 .HIGH {
     background-color: darkgrey;
     font-weight: bold;

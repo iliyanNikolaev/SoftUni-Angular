@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-todo-item',
@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class TodoItemComponent {
 
+  @Input('model') modelVal: string = '';
+  @Output() onModelOutput = new EventEmitter<string>();
+
+  sendDataToParent() {
+    this.onModelOutput.emit(this.modelVal);
+  }
+
+  imgUrl = '/assets/arduino.png';
+  imgClass = 'arduinoImg'
 }
