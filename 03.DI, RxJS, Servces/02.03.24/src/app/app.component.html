@@ -1,0 +1,11 @@
+<div class="app-wrapper">
+    <app-arduino-list [arduinos]="arduinos"/>
+
+    <div class="add-user-form">
+        <h3>Create new board</h3>
+        <input type="text" placeholder="model" #inpModel>
+        <input type="text" placeholder="microcontroller" #inpMicrocontroller>
+        <input type="text" placeholder="image-url" #inpImage>
+        <button (click)="handleCreate(inpModel, inpMicrocontroller, inpImage)">Add board</button>
+    </div>
+</div>

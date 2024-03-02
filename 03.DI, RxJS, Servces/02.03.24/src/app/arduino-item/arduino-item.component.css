@@ -1,0 +1,13 @@
+.arduino-item {
+    border: 1px solid white;
+    width: 25rem;
+    height: 25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 2rem;
+}
+
+.arduino-img {
+    width: 15rem;
+}
