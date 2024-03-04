@@ -1,10 +1,14 @@
 import { Injectable } from '@angular/core';
 import { Arduino } from './types/Arduino';
+import { Comment } from './types/Comment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ArduinoService {
+  URL = 'https://jsonplaceholder.typicode.com/comments';
+
   arduinos: Arduino[] = [{
     model: 'Uno',
     microcontroller: 'ATmega328P 16 MHz',
@@ -19,8 +23,15 @@ export class ArduinoService {
     model: 'Nano',
     microcontroller: 'ATmega328',
     image: 'https://docs.arduino.cc/static/3f2881bc823724bfa1f0b586a830bde1/image.svg'
+  }]
+
+  comments: Comment[] = [];
+
+  constructor(private http: HttpClient) { }
+
+  getComments() {
+    return this.http.get<Comment[]>(this.URL);
   }
-  ]
 
   handleCreate(model: HTMLInputElement, microcontroller: HTMLInputElement, image: HTMLInputElement) {
     if (!model.value || !microcontroller.value || !image.value) {
@@ -35,5 +46,4 @@ export class ArduinoService {
     microcontroller.value = '';
     image.value = '';
   }
-  constructor() { }
 }

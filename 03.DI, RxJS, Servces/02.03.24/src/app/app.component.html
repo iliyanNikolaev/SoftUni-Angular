@@ -7,4 +7,13 @@
         <button (click)="sArduino.handleCreate(inpModel, inpMicrocontroller, inpImage)">Add board</button>
     </div>
     <app-arduino-list [arduinos]="sArduino.arduinos"/>
+
+    <p *ngIf="isLoading">Loading...</p>
+    <ul *ngIf="!isLoading">
+        <div>
+            <div *ngFor="let comment of comments.slice(-10);">
+                <p><strong>{{comment.email}}</strong>: {{comment.body.slice(-40)}}</p>
+            </div>
+        </div>
+    </ul>
 </div>
