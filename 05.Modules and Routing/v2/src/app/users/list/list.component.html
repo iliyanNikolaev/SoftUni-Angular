@@ -1,2 +1,16 @@
-<app-loader *ngIf="isLoading"/>
+<div *ngIf="!isLoading">
+    <ul *ngIf="users.length != 0">
+        <li>user</li>
+        <li>user</li>
+        <li>user</li>
+    </ul>
+
+    <p *ngIf="users.length == 0">
+        no users
+    </p>
+    
+</div>
+<div *ngIf="isLoading">
+    <app-loader />
+</div>
 <button (click)="fetchUsers()">show loader</button>
