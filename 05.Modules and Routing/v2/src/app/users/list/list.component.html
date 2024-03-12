@@ -1,8 +1,6 @@
 <div *ngIf="!isLoading">
     <ul *ngIf="users.length != 0">
-        <li>user</li>
-        <li>user</li>
-        <li>user</li>
+        <app-item *ngFor="let user of users;" [user]="user"/>
     </ul>
 
     <p *ngIf="users.length == 0">

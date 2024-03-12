@@ -16,8 +16,9 @@ export class ListComponent {
     // this.sUsers.getUsers()
     this.isLoading = true;
 
-    setTimeout(() => {
+    this.sUsers.getUsers().subscribe((users) => {
+      this.users = users;
       this.isLoading = false;
-    }, 3000);
+    })
   }
 }
