@@ -13,7 +13,6 @@ export class ListComponent {
   constructor(private sUsers: UsersService) { }
 
   fetchUsers() {
-    // this.sUsers.getUsers()
     this.isLoading = true;
 
     this.sUsers.getUsers().subscribe((users) => {
