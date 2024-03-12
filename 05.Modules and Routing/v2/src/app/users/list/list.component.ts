@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UsersService } from '../users.service';
 import { User } from 'src/app/types/User';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-list',
@@ -10,7 +11,7 @@ import { User } from 'src/app/types/User';
 export class ListComponent {
   public users: User[] = [];
   isLoading = false;
-  constructor(private sUsers: UsersService) { }
+  constructor(private sUsers: UsersService, private router: Router) { }
 
   fetchUsers() {
     this.isLoading = true;
@@ -19,5 +20,9 @@ export class ListComponent {
       this.users = users;
       this.isLoading = false;
     })
+  }
+
+  navTo() {
+    this.router.navigate(['login'])
   }
 }
