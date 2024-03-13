@@ -17,10 +17,12 @@ export class DetailsComponent implements OnInit {
     private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.activatedRoute.params.subscribe((v) => this.id = v['id']);
-    
-    this.sUsers.getUserById(this.id).subscribe((user) => {
-      this.user = user;
+    this.activatedRoute.params.subscribe((v) => {
+      if(v['id']){
+        this.sUsers.getUserById(v['id']).subscribe((user) => {
+          this.user = user;
+        });
+      }
     });
   }
 }
