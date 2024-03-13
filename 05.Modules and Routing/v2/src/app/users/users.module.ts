@@ -5,6 +5,7 @@ import { ItemComponent } from './item/item.component';
 import { SharedModule } from '../shared/shared.module';
 import { DetailsComponent } from './details/details.component';
 import { RouterModule } from '@angular/router';
+import { DetailsGuard } from './details/details.guard';
 
 @NgModule({
   declarations: [
@@ -16,12 +17,12 @@ import { RouterModule } from '@angular/router';
     CommonModule,
     SharedModule,
     RouterModule.forChild([
-      { path: 'users/details/:id', component: DetailsComponent}
+      { path: 'users/details/:id', component: DetailsComponent, canActivate: [DetailsGuard] }
     ])
   ],
   exports: [
     ListComponent,
     DetailsComponent
-  ]
+  ],
 })
 export class UsersModule { }
