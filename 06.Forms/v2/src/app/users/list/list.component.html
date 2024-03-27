@@ -1,0 +1,19 @@
+<div *ngIf="!isLoading">
+    <ul *ngIf="users.length != 0">
+        <app-item *ngFor="let user of users;" [user]="user"/>
+    </ul>
+
+    <p *ngIf="users.length == 0">
+        no users
+    </p>
+    
+</div>
+<div *ngIf="isLoading">
+    <app-loader />
+</div>
+<button (click)="fetchUsers()">fetch users</button>
+
+<div class="routerNavigateDemo">
+    <h2>Router.navigate() demo</h2>
+    <button (click)="navTo()">navTo Login</button>
+</div>
