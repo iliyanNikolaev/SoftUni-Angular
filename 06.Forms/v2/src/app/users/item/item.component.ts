@@ -7,27 +7,5 @@ import { User } from 'src/app/types/User';
   styleUrls: ['./item.component.css']
 })
 export class ItemComponent {
-  @Input('user') user: User = {
-    id: 1,
-    name: '',
-    username: '',
-    email: '',
-    address: {
-      street: '',
-      suite: '',
-      city: '',
-      zipcode: '',
-      geo: {
-        lat: '',
-        lng: ''
-      }
-    },
-    phone: '',
-    website: '',
-    company: {
-      name: '', 
-      catchPhrase: '', 
-      bs: ''
-    }
-  };
+  @Input('user') user: User = {} as User;
 }
