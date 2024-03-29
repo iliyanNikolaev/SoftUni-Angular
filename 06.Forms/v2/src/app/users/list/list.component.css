@@ -3,3 +3,13 @@
     margin-top: 3rem;
     padding: 2rem;
 }
+
+.hover{
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+.not-hover{
+    background-color: initial;
+    color: white;
+}
