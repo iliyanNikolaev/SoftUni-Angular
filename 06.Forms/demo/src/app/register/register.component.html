@@ -1,0 +1,26 @@
+<h1>reactive driven form</h1>
+<form [formGroup]="registerForm" (ngSubmit)="registerSubmit()">
+    <div>
+        <input type="email" placeholder="email" name="email" formControlName="email" />
+    </div>
+    <div>
+        <input type="text" placeholder="first name" name="firstName" formControlName="firstName" />
+    </div>
+    <div>
+        <input type="text" placeholder="last name" name="lastName" formControlName="lastName" />
+    </div>
+    <div>
+        <input type="password" placeholder="password" name="password" formControlName="password" />
+        <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.errors?.['minlength']">
+            <span>
+                Min length is {{registerForm.get('password')?.errors?.['minlength']?.requiredLength}}
+            </span>
+        </div>
+    </div>
+    <div>
+        <input type="password" placeholder="repeatPass" name="password" formControlName="repeat" />
+    </div>
+    <div>
+        <button>register</button>
+    </div>
+</form>
