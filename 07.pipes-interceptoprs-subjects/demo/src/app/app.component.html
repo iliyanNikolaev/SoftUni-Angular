@@ -1,9 +1,5 @@
 <div>
-    <span>{{ '2024-03-28T07:35:55.617+00:00' | timeAgo }}</span>
+    <i class="fas fa-clock">{{clock$ | async | date : "MMM d, y, h:mm:ss a"}}</i>
 </div>
-<div>
-    <span>{{ mockPromise | async | json}}</span>
-</div>
-<div>
-    <span>Time: {{clock$ | async | date : "MMM d, y, h:mm:ss a"}}</span>
-</div>
+
+<app-login />

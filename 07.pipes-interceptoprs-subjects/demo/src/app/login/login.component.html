@@ -1,0 +1,26 @@
+<h1>{{message}}</h1>
+<form #loginForm="ngForm" (ngSubmit)="loginSubmit(loginForm)">
+    <div class="form-group">
+        <input type="email" placeholder="email" name="email" ngModel required email #emailInput="ngModel" />
+        <div *ngIf="emailInput.touched">
+            <span *ngIf="emailInput.errors?.['email']">
+                this input must be in email format
+            </span>
+            <span *ngIf="emailInput.errors?.['required']">
+                email cannot be a empty string
+            </span>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="password" placeholder="password" name="password" ngModel required #passwordInput="ngModel" />
+        <div *ngIf="passwordInput.touched">
+            <span *ngIf="passwordInput.errors?.['required']">
+                password cannot be empty string
+            </span>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <button>login</button>
+    </div>
+</form>
