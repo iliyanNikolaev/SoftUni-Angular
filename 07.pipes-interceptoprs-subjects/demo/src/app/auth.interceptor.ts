@@ -31,6 +31,8 @@ export class AuthInterceptor implements HttpInterceptor {
           }
         })
       );
+    } else if(request.url.startsWith('https://api.cloudinary.com')) {
+      return next.handle(request);
     } else {
       const token = localStorage.getItem('token');
       if (token) {

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
+import { PostService } from '../post.service';
 
 @Component({
   selector: 'app-create-post',
@@ -9,15 +10,28 @@ import { NgForm } from '@angular/forms';
 export class CreatePostComponent {
   message: string = 'Form Not Submited'
   selectedFile: File | null = null;
-  createPostSubmit(form: NgForm) { 
-    if (!this.selectedFile?.type.startsWith('image')) {
+
+  constructor(private sPost: PostService) { }
+
+  createPostSubmit(form: NgForm) {
+
+    if (this.selectedFile && !(this.selectedFile.type.startsWith('image'))) {
       form.controls['image'].setErrors({ 'invalidImage': true });
-    } else {
-      // Можете да продължите със своята логика за вход тук
-      console.log(this.selectedFile?.type.startsWith('image'));
-      this.message = 'Form submitted successfully!';
+    } else if (this.selectedFile && this.selectedFile.type.startsWith('image')) {
+      this.sPost.uploadImage(this.selectedFile).subscribe({
+        next: (response) => {
+          this.message = 'Form submitted successfully! Check cloudinary storage!';
+          console.log({ textContent: form.value['textContent'], image: response });
+        },
+        error: console.error
+      })
+    } else if (this.selectedFile == null) {
+      this.message = 'Form submitted successfully! Without image!';
+      console.log({ textContent: form.value['textContent'] });
     }
   }
+
+
   onFileSelected(event: any) {
     this.selectedFile = event.target.files[0];
   }
