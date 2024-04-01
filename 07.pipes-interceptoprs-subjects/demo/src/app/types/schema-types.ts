@@ -10,5 +10,19 @@ export type User = {
 }
 
 export type Post = {
-    
+    textContent: string,
+    picture?: string,
+    likes: any[],
+    comments: any[],
+    owner: Owner,
+    createdAt: string,
+    updatedAt: string,
+    __v: number
+}
+
+type Owner = {
+      firstName: string,
+      lastName: string,
+      profilePic: string,
+      _id: string
 }
