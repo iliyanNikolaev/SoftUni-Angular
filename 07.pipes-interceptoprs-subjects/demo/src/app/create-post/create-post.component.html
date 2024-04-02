@@ -1,4 +1,7 @@
-<h2>{{message}}</h2>
+<div *ngIf="auth?.fullName">
+    {{auth?.fullName}}: {{auth?._id}}
+</div>
+<h2>create post</h2>
 <form #createPostForm="ngForm" (ngSubmit)="createPostSubmit(createPostForm)">
     <div class="form-group">
         <textarea placeholder="post text content" name="textContent" cols="30" rows="10" ngModel required #textContentInput="ngModel">

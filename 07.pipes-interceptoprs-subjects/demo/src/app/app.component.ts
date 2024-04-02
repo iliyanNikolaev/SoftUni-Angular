@@ -10,6 +10,7 @@ import { UserService } from './user.service';
 })
 export class AppComponent implements OnInit {
   data = { message: "hello" }
+  
   clock$ = interval(1000).pipe(map((x) => new Date()));
   users: User[] = [];
   constructor(private sUser: UserService) { }

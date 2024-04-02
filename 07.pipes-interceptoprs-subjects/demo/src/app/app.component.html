@@ -1,6 +1,10 @@
 <div>
     <i class="fas fa-clock">{{clock$ | async | date : "MMM d, y, h:mm:ss a"}}</i>
 </div>
-
-<app-login />
-<app-create-post />
+<div>
+    <span routerLink="/create">create</span>
+</div>
+<div>
+    <span routerLink="/login">login</span>
+</div>
+<router-outlet />

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { User } from './types/schema-types';
 import { API_URL } from './constants';
 
-type LoginRes = {
+export type LoginRes = {
   token: string,
     firstName: string,
     lastName: string,
